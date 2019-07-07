@@ -75,9 +75,17 @@ int main() {
         int err;
         struct input_event event {};
 
+        LOG(INFO) << uevent.state;
+        LOG(INFO) << uevent.action;
+        LOG(INFO) << uevent.name;
+
         if (uevent.action != "change" || uevent.name != "soc:tri_state_key") {
             return;
         }
+
+        LOG(INFO) << uevent.state;
+        LOG(INFO) << uevent.action;
+        LOG(INFO) << uevent.name;
 
         bool none = uevent.state.find("USB=0") != std::string::npos;
         bool vibration = uevent.state.find("USB-HOST=0") != std::string::npos;
