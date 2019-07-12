@@ -142,7 +142,6 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    bt-mac-generator \
     libbthost_if
 
 # Camera
@@ -249,6 +248,10 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system
+
+# HotwordEnrollement app permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
 
 # IMS
 PRODUCT_PACKAGES += \
